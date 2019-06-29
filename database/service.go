@@ -6,11 +6,11 @@ import (
 
 // DataLayer is interface
 type DataLayer interface {
-	//Insert(conn *sql.DB) (DataLayer, error)
-	//Update(conn *sql.DB) error
-	//Delete(conn *sql.DB) error
-	//GetByKey(conn *sql.DB) (DataLayer, error)
-	//GetAll(conn *sql.DB) ([]DataLayer, error)
+	Insert(conn *sql.DB) (DataLayer, error)
+	Update(conn *sql.DB) error
+	Delete(conn *sql.DB) error
+	GetByKey(conn *sql.DB) (DataLayer, error)
+	GetAll(conn *sql.DB) ([]DataLayer, error)
 }
 
 // GetByKey table record by key
