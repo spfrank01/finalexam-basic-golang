@@ -23,5 +23,10 @@ func CreateHandler(c *gin.Context) {
 		return
 	}
 
-	cusRes := database.Insert(cusReq)
+	cusRes, err := database.Insert(cusReq)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+	}
+
+	c.JSON(http.StatusCreated, cusRes)
 }
