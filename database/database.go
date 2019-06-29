@@ -24,7 +24,7 @@ func InitDB() {
 	}
 	defer db.Close()
 
-	_, err = db.Exec("DROP TABLE todos")
+	_, err = db.Exec("DROP TABLE customers")
 	if err != nil {
 		log.Fatal("Can't drop table fatal error", err.Error())
 	}
